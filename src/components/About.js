@@ -1,28 +1,9 @@
 import React from "react";
-import { useState } from "react";
 
-function About() {
-    const [myStyle, setMyStyle] = useState({
-        color : "black",
-        backgroundColor : 'white'
-    })
-
-    const [btnText, setBtnText] = useState('Enable Dark Mode')
-
-    function toggleColor(){
-        if(myStyle.backgroundColor==='white'){
-            setMyStyle({
-                color : 'white',
-                backgroundColor : 'black'
-            })
-            setBtnText('Disable Dark Mode')
-        }else{
-            setMyStyle({
-                color : "black",
-                backgroundColor : "white"
-            })
-            setBtnText('Enable Dark Mode')
-        }
+function About(props) {
+    let myStyle = {
+        color : props.mode ==='dark'?'white':'black',
+        backgroundColor : props.mode==='dark'?'black':'white'
     }
 
     return (
@@ -32,45 +13,66 @@ function About() {
                 <div className="accordion-item">
                     <h2 className="accordion-header" id="headingOne">
                         <button className="accordion-button" type="button" style={myStyle} data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                            Accordion Item #1
+                            <strong>How it's working</strong>
                         </button>
                     </h2>
                     <div id="collapseOne" className="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
                         <div className="accordion-body" style={myStyle}>
-                            <strong>This is the first item's accordion body.</strong> It is shown by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+                            This website is in under develoment process but we provide free tools to help you with your daily tasks. You will find tools for formatting source code, converters, tools for handling text, such as remove duplicate characters, remove extra space, convert to uppercase, convert to lowercase, reverse text and many others.
                         </div>
                     </div>
                 </div>
                 <div className="accordion-item">
                     <h2 className="accordion-header" id="headingTwo">
                         <button className="accordion-button collapsed" type="button" style={myStyle} data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                            Accordion Item #2
+                            <strong>Free to use</strong>
                         </button>
                     </h2>
                     <div id="collapseTwo" className="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
                         <div className="accordion-body" style={myStyle}>
-                            <strong>This is the second item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+                            This website is totally free to use so make your hands dirty to do things.
                         </div>
                     </div>
                 </div>
                 <div className="accordion-item">
                     <h2 className="accordion-header" id="headingThree">
                         <button className="accordion-button collapsed" type="button" style={myStyle} data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                            Accordion Item #3
+                            <strong>Responsive</strong>
                         </button>
                     </h2>
                     <div id="collapseThree" className="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
                         <div className="accordion-body" style={myStyle}>
-                            <strong>This is the third item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+                            It also support Browser compatibility by providing screen resolution to different devices like mobile, desktop, laptop etc
                         </div>
                     </div>
                 </div>
-            </div>
-            <div>
-                <button type="button" className="btn btn-primary my-3" onClick={toggleColor}> {btnText} </button>
             </div>
         </div>
     )
 }
 
 export default About
+
+    // try code for dark mode
+    // const [myStyle, setMyStyle] = useState({
+    //     color : "black",
+    //     backgroundColor : 'white'
+    // })
+
+    // const [btnText, setBtnText] = useState('Enable Dark Mode')
+
+    // function toggleColor(){
+    //     if(myStyle.backgroundColor==='white'){
+    //         setMyStyle({
+    //             color : 'white',
+    //             backgroundColor : 'black'
+    //         })
+    //         setBtnText('Disable Dark Mode')
+    //     }else{
+    //         setMyStyle({
+    //             color : "black",
+    //             backgroundColor : "white"
+    //         })
+    //         setBtnText('Enable Dark Mode')
+    //     }
+    // }
